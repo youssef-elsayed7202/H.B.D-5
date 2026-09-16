@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Parade - BaBa</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Stars -->
+    <div class="stars"></div>
+
+    <!-- Confetti -->
+    <div class="confetti"></div>
+
+    <!-- Intro -->
+    <section class="intro" id="intro">
+        <p>النهارده يوم مميز</p>
+        <button onclick="startParty()">ابدأ الاحتفال 🎉</button>
+    </section>
+
+    <!-- Main Parade -->
+    <main id="party">
+
+        <div class="top-text">
+            <span>HAPPY BIRTHDAY</span>
+            <h1>BaBa</h1>
+            <div class="age">48</div>
+        </div>
+
+        <!-- Road -->
+        <div class="road">
+
+            <div class="car car1">
+                <div class="car-body"></div>
+                <div class="wheel left"></div>
+                <div class="wheel right"></div>
+                <span>الفرحة بدأت</span>
+            </div>
+
+            <div class="car car2">
+                <div class="car-body"></div>
+                <div class="wheel left"></div>
+                <div class="wheel right"></div>
+                <span>يلا نحتفل</span>
+            </div>
+
+            <div class="car car3">
+                <div class="car-body"></div>
+                <div class="wheel left"></div>
+                <div class="wheel right"></div>
+                <span>خلّي الفرحة تكمل</span>
+            </div>
+
+        </div>
+
+        <!-- Final -->
+        <section class="final">
+            <h2>HAPPY BIRTHDAY</h2>
+            <strong>48</strong>
+
+            <p>
+                كل سنة وإنت طيب يا بابا ❤️<br>
+                ويا رب أيامك كلها تبقى فرحة وسعادة.
+            </p>
+
+            <div class="cake">🎂</div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+      </html>
