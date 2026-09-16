@@ -1,312 +1,77 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Parade - BaBa</title>
 
-body {
-    min-height: 100vh;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(#07152f, #102d52, #1b4265);
-    color: white;
-}
+    <link rel="stylesheet" href="style.css">
+</head>
 
-/* Stars */
+<body>
 
-.stars {
-    position: fixed;
-    inset: 0;
-    background-image:
-        radial-gradient(circle, white 1px, transparent 1px),
-        radial-gradient(circle, white 1px, transparent 1px);
-    background-size: 70px 70px, 110px 110px;
-    background-position: 10px 20px, 40px 60px;
-    opacity: .55;
-    pointer-events: none;
-}
+    <!-- Stars -->
+    <div class="stars"></div>
 
-/* Intro */
+    <!-- Confetti -->
+    <div class="confetti"></div>
 
-.intro {
-    position: fixed;
-    inset: 0;
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #07152f, #163b61);
-    transition: 1s;
-}
+    <!-- Intro -->
+    <section class="intro" id="intro">
+        <p>النهارده يوم مميز</p>
+        <button onclick="startParty()">ابدأ الاحتفال 🎉</button>
+    </section>
 
-.intro p {
-    font-size: clamp(30px, 7vw, 65px);
-    font-weight: bold;
-    margin-bottom: 35px;
-}
+    <!-- Main Parade -->
+    <main id="party">
 
-.intro button {
-    border: none;
-    padding: 15px 35px;
-    border-radius: 50px;
-    background: #e8bd63;
-    color: #17243c;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 25px #e8bd63;
-}
+        <div class="top-text">
+            <span>HAPPY BIRTHDAY</span>
+            <h1>BaBa</h1>
+            <div class="age">48</div>
+        </div>
 
-.intro.hide {
-    opacity: 0;
-    visibility: hidden;
-}
+        <!-- Road -->
+        <div class="road">
 
-/* Main */
+            <div class="car car1">
+                <div class="car-body"></div>
+                <div class="wheel left"></div>
+                <div class="wheel right"></div>
+                <span>الفرحة بدأت</span>
+            </div>
 
-#party {
-    min-height: 100vh;
-    padding-top: 60px;
-}
+            <div class="car car2">
+                <div class="car-body"></div>
+                <div class="wheel left"></div>
+                <div class="wheel right"></div>
+                <span>يلا نحتفل</span>
+            </div>
 
-.top-text {
-    text-align: center;
-    position: relative;
-    z-index: 3;
-}
+            <div class="car car3">
+                <div class="car-body"></div>
+                <div class="wheel left"></div>
+                <div class="wheel right"></div>
+                <span>خلّي الفرحة تكمل</span>
+            </div>
 
-.top-text span {
-    font-size: 20px;
-    letter-spacing: 5px;
-    color: #e8bd63;
-}
+        </div>
 
-.top-text h1 {
-    font-size: clamp(60px, 13vw, 130px);
-    margin: 5px 0;
-    color: #f1cf82;
-    text-shadow: 0 0 20px rgba(241, 207, 130, .45);
-}
+        <!-- Final -->
+        <section class="final">
+            <h2>HAPPY BIRTHDAY</h2>
+            <strong>48</strong>
 
-.age {
-    font-size: clamp(70px, 15vw, 150px);
-    font-weight: bold;
-    color: white;
-    line-height: .8;
-}
+            <p>
+                كل سنة وإنت طيب يا بابا ❤️<br>
+                ويا رب أيامك كلها تبقى فرحة وسعادة.
+            </p>
 
-/* Road */
+            <div class="cake">🎂</div>
+        </section>
 
-.road {
-    position: relative;
-    height: 360px;
-    margin-top: 30px;
-    overflow: hidden;
-    background: #101b29;
-    border-top: 5px solid #e8bd63;
-    border-bottom: 5px solid #e8bd63;
-}
+    </main>
 
-.road::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    border-top: 5px dashed #e8bd63;
-}
-
-/* Cars */
-
-.car {
-    position: absolute;
-    width: 190px;
-    height: 100px;
-    z-index: 4;
-    animation: drive 10s linear infinite;
-}
-
-.car1 {
-    top: 35px;
-    left: -230px;
-    animation-delay: 0s;
-}
-
-.car2 {
-    top: 135px;
-    left: -230px;
-    animation-delay: 2.5s;
-}
-
-.car3 {
-    top: 235px;
-    left: -230px;
-    animation-delay: 5s;
-}
-
-.car-body {
-    position: absolute;
-    bottom: 15px;
-    left: 10px;
-    width: 170px;
-    height: 55px;
-    border-radius: 25px 30px 10px 10px;
-    background: linear-gradient(135deg, #e8bd63, #b87832);
-    box-shadow: 0 0 18px rgba(232, 189, 99, .5);
-}
-
-.car-body::before {
-    content: "";
-    position: absolute;
-    width: 65px;
-    height: 35px;
-    top: -25px;
-    left: 45px;
-    border-radius: 25px 25px 0 0;
-    background: #d8b56d;
-}
-
-.wheel {
-    position: absolute;
-    bottom: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #05080d;
-    border: 6px solid #687080;
-}
-
-.wheel.left {
-    left: 30px;
-}
-
-.wheel.right {
-    right: 20px;
-}
-
-.car span {
-    position: absolute;
-    top: -25px;
-    left: 15px;
-    width: 180px;
-    text-align: center;
-    font-size: 17px;
-    font-weight: bold;
-    color: #fff;
-}
-
-@keyframes drive {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(calc(100vw + 300px));
-    }
-}
-
-/* Final */
-
-.final {
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.final h2 {
-    color: #e8bd63;
-    font-size: clamp(35px, 7vw, 70px);
-    letter-spacing: 5px;
-}
-
-.final strong {
-    font-size: clamp(100px, 20vw, 190px);
-    color: #f1cf82;
-    line-height: 1;
-    text-shadow: 0 0 30px rgba(241, 207, 130, .4);
-}
-
-.final p {
-    font-size: clamp(20px, 4vw, 30px);
-    line-height: 1.8;
-    margin-top: 25px;
-}
-
-.cake {
-    margin-top: 30px;
-    font-size: 60px;
-    filter: sepia(.3);
-}
-
-/* Confetti */
-
-.confetti {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.confetti::before,
-.confetti::after {
-    content: "✦  •  ✧  •  ✦  •  ✧  •  ✦";
-    position: absolute;
-    width: 100%;
-    font-size: 28px;
-    color: #e8bd63;
-    animation: fall 5s linear infinite;
-}
-
-.confetti::before {
-    top: -30px;
-}
-
-.confetti::after {
-    top: -100px;
-    animation-delay: 2s;
-    color: #d9e5f2;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    #party {
-        padding-top: 35px;
-    }
-
-    .top-text span {
-        font-size: 15px;
-    }
-
-    .road {
-        height: 300px;
-    }
-
-    .car {
-        transform: scale(.8);
-    }
-
-    .final {
-        min-height: 60vh;
-    }
-}@keyframes confettiFall {
-    from {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    to {
-        transform: translateY(110vh) rotate(720deg);
-    }
-}
+    <script src="script.js"></script>
+</body>
+            </html>
